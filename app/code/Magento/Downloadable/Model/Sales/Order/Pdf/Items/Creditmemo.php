@@ -18,18 +18,17 @@ class Creditmemo extends \Magento\Downloadable\Model\Sales\Order\Pdf\Items\Abstr
     protected $string;
 
     /**
-     * @param \Magento\Framework\Model\Context $context
-     * @param \Magento\Framework\Registry $registry
-     * @param \Magento\Tax\Helper\Data $taxData
-     * @param \Magento\Framework\Filesystem $filesystem
-     * @param \Magento\Framework\Filter\FilterManager $filterManager
-     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
-     * @param \Magento\Downloadable\Model\Link\PurchasedFactory $purchasedFactory
-     * @param \Magento\Downloadable\Model\ResourceModel\Link\Purchased\Item\CollectionFactory $itemsFactory
-     * @param \Magento\Framework\Stdlib\StringUtils $string
-     * @param \Magento\Framework\Model\ResourceModel\AbstractResource $resource
-     * @param \Magento\Framework\Data\Collection\AbstractDb $resourceCollection
-     * @param array $data
+     * @param \Magento\Framework\Model\Context                             $context
+     * @param \Magento\Framework\Registry                                  $registry
+     * @param \Magento\Tax\Helper\Data                                     $taxData
+     * @param \Magento\Framework\Filesystem                                $filesystem
+     * @param \Magento\Framework\Filter\FilterManager                      $filterManager
+     * @param \Magento\Framework\App\Config\ScopeConfigInterface           $scopeConfig
+     * @param \Magento\Downloadable\Model\Link\Purchased\Proxy\Factory     $purchasedProxyFactory
+     * @param \Magento\Framework\Stdlib\StringUtils                        $string
+     * @param \Magento\Framework\Model\ResourceModel\AbstractResource|null $resource
+     * @param \Magento\Framework\Data\Collection\AbstractDb|null           $resourceCollection
+     * @param array                                                        $data
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      */
     public function __construct(
@@ -39,8 +38,7 @@ class Creditmemo extends \Magento\Downloadable\Model\Sales\Order\Pdf\Items\Abstr
         \Magento\Framework\Filesystem $filesystem,
         \Magento\Framework\Filter\FilterManager $filterManager,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
-        \Magento\Downloadable\Model\Link\PurchasedFactory $purchasedFactory,
-        \Magento\Downloadable\Model\ResourceModel\Link\Purchased\Item\CollectionFactory $itemsFactory,
+        \Magento\Downloadable\Model\Link\Purchased\Proxy\Factory $purchasedProxyFactory,
         \Magento\Framework\Stdlib\StringUtils $string,
         \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
         \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
@@ -54,8 +52,7 @@ class Creditmemo extends \Magento\Downloadable\Model\Sales\Order\Pdf\Items\Abstr
             $filesystem,
             $filterManager,
             $scopeConfig,
-            $purchasedFactory,
-            $itemsFactory,
+            $purchasedProxyFactory,
             $resource,
             $resourceCollection,
             $data
